@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="zh-Hant-TW"><head>
+  <title>博客來電子書櫃</title>
+  <meta property="og:site_name" content="博客來">
+  <meta property="og:type" content="product">
+  <meta property="og:image" content="https://www.books.com.tw/csss/images/books_logo.png">
+  <meta property="og:url" content="https://www.books.com.tw/">
+  <meta property="og:description" content="博客來提供上百萬書籍、百貨、影音、設計、文具、美食、有機、美妝、服飾。網路書店有齊全的繁簡體外文書籍雜誌，購物網多樣性百貨設計商品滿足您購物需求。取貨安全方便，中午前訂7-11隔日取">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Language" content="zh-tw">
+  <title>博客來電子書櫃</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://connect.facebook.net/signals/config/1700571533513678?v=2.9.15&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TBZGS7"></script><script src="assets/dist/jquery-3.4.1.min.js"></script>
+  <script src="assets/dist/ua-parser.min.js"></script>
+  <script src="assets/dist/jquery.blockui.js"></script>
+  <script src="assets/dist/math.uuid.js"></script>
+  <script src="assets/dist/jquery.cookie.js"></script>
+  <script src="assets/dist/jquery.md5.js"></script>
+  <script src="assets/dist/moment.js"></script>
+  <script src="assets/dist/json2.js"></script>
+  <script src="assets/dist/jquery.validate.min.js"></script>
+  <script src="assets/js/jquery.extend.js"></script>
+  <script src="/config/config.js"></script>
+  <script src="assets/js/common.js"></script><link rel="stylesheet" type="text/css" href="assets/css/new.css">
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/dom.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/event.js"></script>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/nav.css">
+  <!-- GA -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TBZGS7');
+  </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBZGS7"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header class="">
+			<span class="logo">
+				<a href="https://www.books.com.tw/" class="ebooks"></a>
+				<a href="index.html?readlist=all" class="books"></a>
+			</span>
+  <a href="#" class="searchbtn"></a>
+  <a href="" class="logout">登出</a>
+  <form method="get" class="search" autocomplete="off" action="search.html">
+    <input required="true" name="search_keyword" type="text" placeholder="書名、作者、出版社">
+    <button type="submit"></button>
+  </form>
+  <br clear="both">
+</header>
+<nav>
+  <label for="mobile_menu">我的書籍</label>
+  <input type="checkbox" id="mobile_menu">
+
+  <ul class="active book_type_list long_list" tabindex="1">
+    <title>我的書籍</title>
+    <div class="li_group"><li class="active"><a href="index.html?readlist=all">已購買</a></li><li><a href="javascript:" onmousedown="location.href='index.html?readlist=book'">書籍</a></li><li><a href="javascript:" onmousedown="location.href='index.html?readlist=magazine'">雜誌</a></li><li><a href="javascript:" onmousedown="location.href='index.html?readlist=trial'">試閱</a></li><li><a href="javascript:" onmousedown="location.href='index.html?readlist=archive'">封存書單</a></li><li><a href="javascript:" onmousedown="location.href='index.html?readlist=private'">密碼書單</a></li><li class="add_booklist"><a href="javascript:" class="addBookList">＋</a></li></div>
+    <!--<li><a href="javascript:" onclick="document.getElementById('add_list').style.display = 'block';">＋</a></li>-->
+  </ul>
+
+  <ul tabindex="1" class="book_type_list_">
+    <title>我的閱讀</title>
+    <div class="li_group">
+      <li><a href="mybook.html" data-href="'mybook.html'" onmousedown="location.href='mybook.html'">已閱讀書籍紀錄</a></li>
+      <li><a href="mynote.html" data-href="'mynote.html'" onmousedown="location.href='mynote.html'">劃線筆記</a></li>
+      <li><a href="myattainment.html" data-href="'myattainment.html'" onmousedown="location.href='myattainment.html'">閱讀心得</a></li>
+      <li><a href="mybookmark.html" data-href="'mybookmark.html'" onmousedown="location.href='mybookmark.html'">書籤</a></li>
+    </div>
+  </ul>
+
+  <ul tabindex="1" class="book_type_list_">
+    <title>偏好設定</title>
+    <div class="li_group">
+      <li><a data-href="'setting-setup.html'" onmousedown="location.href='setting-setup.html'" href="setting-setup.html">裝置管理</a></li>
+      <li><a data-href="'setting-name.html'" onmousedown="location.href='setting-name.html'" href="setting-name.html">暱稱設定修改</a></li>
+      <li><a data-href="'setting-password.html'" onmousedown="location.href='setting-password.html'" href="setting-password.html">密碼書單密碼管理</a></li>
+      <li><a data-href="'setting-instructions.html'" onmousedown="location.href='setting-instructions.html'" href="setting-instructions.html">操作說明頁設定</a></li>
+    </div>
+  </ul>
+
+  <br clear="both">
+</nav>
+<div id="main" class="">
+  <div class="top basepage fixxed">
+    <h1><font class="readlist_name" data-ga="readlist_name">已購買</font></h1>
+    <h1><font class="book_num">(1)</font></h1>
+    <h1 class="hideElement select_check"><font></font></h1>
+
+
+
+
+    <br>
+    <div id="operation4" style="display:none;">
+      <form class="form">
+        <button>確定</button>
+        <button type="button" class="cancel">取消</button>
+      </form>
+    </div>
+    <div id="operation1">
+      <label class="icon1" for="icon1"><b>依購買時間新&gt;舊</b>
+        <input type="checkbox" id="icon1">
+        <ul class="tab">
+          <li class="doSort" data-sort="TimeDesc"><a href="#" class="active">依購買時間(新-&gt;舊)</a></li>
+          <li class="doSort" data-sort="TimeAsc"><a href="#">依購買時間(舊-&gt;新)</a></li>
+          <li class="doSort" data-sort="Name"><a href="#">依書名</a></li>
+          <li class="doSort" data-sort="Publisher"><a href="#">依出版社</a></li>
+          <li class="doSort" data-sort="Author"><a href="#">依作者</a></li>
+          <li class="doSort" data-sort="ReadTimeDesc"><a href="#">最近閱讀</a></li>
+          <li class="doSort" data-sort="UnreadTimeDesc"><a href="#">尚未閱讀</a></li>
+        </ul>
+      </label>
+
+      <label class="icon5" for="icon5" id="show1" style="display:none;">
+        <input type="checkbox" id="icon5">
+      </label>
+
+      <label class="icon2" for="icon2" id="show2">
+        <input type="checkbox" id="icon2">
+      </label>
+
+
+
+
+
+      <label class="icon3" for="icon3">
+        <input type="checkbox" id="icon3">
+        <ul class="tab">
+
+          <li><a href="javascript:" class="archiveBatchBtn">封存</a></li>
+
+          <li><hr><a href="javascript:" class="bg">分類至</a></li>
+          <div class="li_group"><li class="categoryChangeList"><a href="#" data-title="密碼書單" data-id="private">密碼書單</a></li></div>
+        </ul>
+      </label>
+
+
+
+    </div>
+    <div id="operation2" style="display:none;">
+      <form class="form">
+        <button type="submit">確定移除</button>
+        <button type="button" class="cancel">取消</button>
+      </form>
+    </div>
+    <div id="operation3" style="display:none;">
+      <form class="form">
+        <button type="submit">確定封存</button>
+        <button type="button" class="cancel">取消</button>
+      </form>
+    </div>
+    <div id="operation5" style="display:none;">
+      <form class="form">
+        <button type="submit">解除封存</button>
+        <button type="button" class="cancel">取消</button>
+      </form>
+    </div>
+  </div>
+  <!--<ul class="box_demo hideElement" ></ul>-->
+
+  <ul id="list" class="box basepage_box">
+    <li>												<a target="_blank" class="link_check " data-href="epub/web/?book_uni_id=E050033363_reflowable_normal"><img class="img" src="https://s3public-ebook.books.com.tw/cover/49B6B7/7408648/E050033363.jpg"></a>												<h3><a data-o_title="小書痴的下剋上：為了成為圖書管理員不擇手段！第一部 士兵的女兒(I)" data-cut_title="小書痴的下剋上：為了成為圖書管理員不擇手段！第一部 士兵的女兒(I)" target="_blank" class="link_check" data-href="epub/web/?book_uni_id=E050033363_reflowable_normal">小書痴的下剋上：為了成為圖書管理員不擇手段！第一部 士兵的女兒(I)</a></h3>												<em>作者：香月美夜<br>出版社：皇冠<br>購買日期：2019-11-17<br>適合：手機、平板(13.4 MB)</em>												<br clear="both">												<label class="check hideElement">													<input data-readlist="book" type="checkbox" value="E050033363_reflowable_normal">													<i></i>												</label>												<i class="epub"></i>											</li></ul>
+
+  <center class="load_more_btn" style="display: none;"><button>載入更多書籍</button></center>
+
+</div>
+
+<div class="no_book hideElement">
+  <h2>您尚未有任何書籍，馬上前往博客來試閱、選購，開始閱讀電子書！</h2>
+</div>
+
+<!-- 忘記密碼 -->
+<div class="no_book hideElement" id="forget" style="display:none;">
+  <h2>已傳送更新密碼訊息至您的信箱！</h2>
+</div>
+<!-- 輸入密碼 -->
+<div id="password" class="password_login_form_div" style="display:none;">
+  <form method="get" autocomplete="off" class="form password_login_form" onsubmit="return false;">
+    <label for="p3">輸入密碼</label>
+    <input autocomplete="off" name="password" type="password" placeholder="請輸入八位數以上密碼" id="p3" data-rule-required="true" data-msg-required="請輸入八位數以上密碼" data-rule-minlength="8" data-msg-minlength="請輸入八位數以上密碼" autofocus="">
+    <button type="submit">確定</button>
+    <button type="button" class="cancel forgetPwd_btn">忘記密碼？</button>
+  </form>
+</div>
+<!-- 建立密碼 -->
+<div id="add_password" class="password_create_form_div" style="display:none;">
+  <form autocomplete="off" class="form" id="create_password" onsubmit="return false;">
+    <label for="p1">建立密碼</label>
+    <input autocomplete="off" name="password" type="password" placeholder="請輸入八位數以上密碼" id="p1" data-rule-required="true" data-msg-required="請輸入八位數以上密碼" data-rule-minlength="8" data-msg-minlength="請輸入八位數以上密碼">
+    <label for="p2">再次輸入密碼</label>
+    <input autocomplete="off" name="check_password" type="password" placeholder="請輸入八位數以上密碼" id="p2" data-rule-required="true" data-msg-required="請輸入八位數以上密碼" data-rule-minlength="8" data-msg-minlength="請輸入八位數以上密碼" data-rule-equalto="#p1" data-msg-equalto="兩次輸入密碼不相同">
+    <button type="submit" onclick="">確定</button>
+    <button type="button" class="cancel" onclick="javascript:location.href='index.html?readlist=all'">取消</button>
+  </form>
+</div>
+<!-- 新增個人書單 -->
+<form autocomplete="off" id="add_list" class="form">
+  <legend>
+    <label for="personal_book">新增個人書單名稱</label>
+    <label for="personal_book" class="add_list_notice">限輸入中英文六個字</label>
+    <input type="text" placeholder="不支援全部數字名稱" id="personal_book">
+    <button>確定</button>
+    <button type="button" class="cancel">取消</button>
+  </legend>
+</form>
+
+<!-- 編輯個人書單 -->
+<form autocomplete="off" id="add_list" class="form edit_book_name">
+  <legend>
+    編輯個人書單名稱
+    <label for="personal_book_edit" class="add_list_notice">限輸入中英文六個字</label>
+    <input type="text" id="personal_book_edit" value="" autocomplete="off">
+    <button type="submit">確定</button>
+    <button type="button" class="cancel">取消</button>
+  </legend>
+</form>
+
+<!-- 批次封存所選書籍 -->
+<form autocomplete="off" id="sealing" class="form archiveConfirm">
+  <legend>
+    <em>確定要將所選書籍封存？未來於各行動裝置同步時將不會載入，要重新閱讀，請至封存書單解除封存。</em>
+    <input type="hidden" name="seal_book_id">
+    <button type="submit">確定</button>
+    <button type="button" class="cancel">取消</button>
+  </legend>
+</form>
+<!-- 解除封存所選書籍 -->
+<form autocomplete="off" id="sealing" class="form reArchiveConfirm">
+  <legend>
+    <em>確定要將所選書籍解除封存？解封存後，未來於各行動裝置同步時將會重新載入。</em>
+    <input type="hidden" name="seal_book_id">
+    <button type="submit">確定</button>
+    <button type="button" class="cancel">取消</button>
+  </legend>
+</form>
+<!-- 刪除所選書籍 -->
+<form autocomplete="off" id="delete" class="form removeBookConfirm">
+  <legend>
+    <em>確定要從書單中移除所選書籍？<br><br></em>
+    <button type="submit">確定</button>
+    <button type="button" class="cancel">取消</button>
+  </legend>
+</form>
+<form autocomplete="off" id="gosetpw" class="form setPrivateConfirm">
+  <legend>
+    <em>尚未設定密碼，請先設定，方能使用密碼書單。<br><br></em>
+    <button type="submit">現在設定</button>
+    <button type="button" class="cancel">取消</button>
+  </legend>
+</form>
+
+
+<form id="delete" method="post" class="form common_alert" onsubmit="return false;">						<legend>							<em class="title"></em>							<button id="btnYes" type="submit">確定</button>						</legend>					</form><form id="delete" method="post" class="form commonConfirm" onsubmit="return false;">							<legend>								<em class="title"></em>								<button id="btnYes" type="submit">確定</button>								<button id="btnNo" type="button" class="cancel">取消</button>							</legend>						</form><form id="delete" method="post" class="form rankConfirm blackBackground" onsubmit="return false;">								<legend>									<em class="title"></em>									<button id="btnYes" type="submit">已滿18歲</button>									<button id="btnNo" type="button" class="cancel">未滿18歲</button>									<i class="fa fa-times fa-2x close"></i>								</legend>							</form><form id="delete" method="post" class="form supportConfirm blackBackground" onsubmit="return false;">								<legend>									<em class="title"></em>									<center>									<button id="btnYes" type="submit">確認</button>									<button id="btnNo" type="button" class="cancel">下載Chrome</button>									</center>								</legend>							</form><div class="big_popup" id="popup5">						<i class="fa fa-times fa-2x close  download_popup"></i>							<div class="main">							<div class="popup_book" style="padding:0 10px !important;">								<h3 style="font-size:17px;">歡迎安裝博客來電子書應用程式</h3>								<div class="download_group">									<img src="assets/img/ebook_download_icon.png" style="margin-top:3px;margin-bottom:3px;">								</div>							    <div class="inline"><a target="_blank" class="mobile_use_check" style="color:#207cca;">下載應用程式</a></div><br>								<div class="inline">您也可以使用 <a class="close" style="color:#207cca;">行動版網站</a></div>							</div>						</div>					</div>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1700571533513678");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1700571533513678&amp;ev=PageView&amp;noscript=1"></noscript>
+
+<script type="text/javascript" id="">(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b;a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};a[b].l=1*new Date;c=e.createElement(f);d=e.getElementsByTagName(f)[0];c.async=1;c.src=g;d.parentNode.insertBefore(c,d)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create","UA-4860506-1","auto");</script>
+</body></html>

@@ -1,5 +1,6 @@
 export enum Source {
   Readmoo = 'readmoo',
+  Books = 'books',
 }
 
 export default interface Book {

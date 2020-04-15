@@ -4,7 +4,6 @@ import { JSDOM } from 'jsdom';
 import ReadmooDetector from '@src/detectors/readmooDetector';
 import Book, { Source } from '@src/types/book';
 
-
 describe('ReadmooDetector', () => {
   const dom = new JSDOM();
   const { window } = dom;
