@@ -1,5 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
+
 import BaseExporter from '@src/exporters/baseExporter';
+import Dictionary from '@src/types/dictionary';
 
 type WebRequestHeadersDetails = chrome.webRequest.WebRequestHeadersDetails;
 
@@ -10,9 +12,7 @@ const decoder = new TextDecoder('utf-8');
 
 const arrayBufferToString = (buffer: ArrayBuffer) => decoder.decode(new Uint8Array(buffer));
 
-type Headers = { [key in string]?: string; };
-
-const get = async (path: string, headers?: Headers) => {
+const get = async (path: string, headers?: Dictionary) => {
   const config: AxiosRequestConfig = {
     withCredentials: true,
     responseType: 'arraybuffer',
