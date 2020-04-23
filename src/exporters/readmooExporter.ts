@@ -1,6 +1,8 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import BaseExporter from '@src/exporters/baseExporter';
 
+type WebRequestHeadersDetails = chrome.webRequest.WebRequestHeadersDetails;
+
 const apiBase = 'https://reader.readmoo.com';
 const viewerPath = '/_single-bundle/mooreader-js-viewer_all.min.js';
 
@@ -29,12 +31,30 @@ const obtainBasePath = (path: string) => {
   return segments.join('/');
 };
 
+const modifyHeaderBeforeRequest = (details: WebRequestHeadersDetails) => {
+  const newRef = 'https://reader.readmoo.com/reader/index.html';
+  const refererHeader = details.requestHeaders.find(({ name }) => name.toLowerCase() === 'referer');
+  if (refererHeader) {
+    refererHeader.value = newRef;
+  } else {
+    details.requestHeaders.push({ name: 'Referer', value: newRef });
+  }
+
+  return { requestHeaders: details.requestHeaders };
+};
+
 class ReadmooExporter extends BaseExporter {
   private basePath = '';
 
   private authorizationToken = '';
 
   async export(): Promise<Blob> {
+    chrome.webRequest.onBeforeSendHeaders.addListener(
+      modifyHeaderBeforeRequest,
+      { urls: ['*://reader.readmoo.com/*'] },
+      ['requestHeaders', 'blocking', 'extraHeaders'],
+    );
+
     const containerXmlPath = 'META-INF/container.xml';
     const encryptionXmlPath = 'META-INF/encryption.xml';
 
@@ -44,6 +64,8 @@ class ReadmooExporter extends BaseExporter {
     const rootFilePath = this.rootFilePath(containerXmlPath);
     await this.batchFetch([rootFilePath]);
     await this.batchFetch(this.contentFilePaths(rootFilePath));
+
+    chrome.webRequest.onBeforeSendHeaders.removeListener(modifyHeaderBeforeRequest);
 
     return this.buildEPUB();
   }
