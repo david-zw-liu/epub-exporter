@@ -2,6 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 import BaseExporter from '@src/exporters/baseExporter';
 
 const apiBase = 'https://reader.readmoo.com';
+const viewerPath = '/_single-bundle/mooreader-js-viewer_all.min.js';
 
 const decoder = new TextDecoder('utf-8');
 
@@ -31,10 +32,13 @@ const obtainBasePath = (path: string) => {
 class ReadmooExporter extends BaseExporter {
   private basePath = '';
 
+  private authorizationToken = '';
+
   async export(): Promise<Blob> {
     const containerXmlPath = 'META-INF/container.xml';
     const encryptionXmlPath = 'META-INF/encryption.xml';
 
+    await this.fetchAuthorizationToken();
     await this.fetchBasePath();
     await this.batchFetch([containerXmlPath, encryptionXmlPath], [encryptionXmlPath]);
     const rootFilePath = this.rootFilePath(containerXmlPath);
@@ -44,12 +48,24 @@ class ReadmooExporter extends BaseExporter {
     return this.buildEPUB();
   }
 
+  private async fetchAuthorizationToken() {
+    await this.updateMessage('取得 Authorization Token');
+    await this.increasePending();
+
+    const arrayBuffer = await get(viewerPath);
+    const content = arrayBufferToString(arrayBuffer);
+    // eslint-disable-next-line prefer-destructuring
+    this.authorizationToken = content.match(/bearer.+return["'](.*?)["']/)[1];
+
+    await this.increaseFinished();
+  }
+
   private async fetchBasePath() {
     await this.updateMessage('取得檔案路徑');
     await this.increasePending();
 
     const { id } = this.book;
-    const arrayBuffer = await get(`/api/book/${id}/nav`, { authorization: 'bearer wyr0ofzt3TFciX-xhbQDCg' });
+    const arrayBuffer = await get(`/api/book/${id}/nav`, { authorization: `bearer ${this.authorizationToken}` });
     const object = JSON.parse(arrayBufferToString(arrayBuffer));
     this.basePath = object.base as string;
 
