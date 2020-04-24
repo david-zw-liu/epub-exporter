@@ -24,7 +24,7 @@ yarn build-prod
 - [x] Add webpack
 - [x] Add jest
 - [x] Implement exporter of `readmoo.com`
-- [ ] Implement exporter of `books.com.tw`
+- [x] Implement exporter of `books.com.tw`
 - [ ] Handle download Error
 - [ ] Add test for exporters
 - [ ] CI/CD
