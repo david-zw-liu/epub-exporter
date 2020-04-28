@@ -50,5 +50,22 @@ describe('BooksDetector', () => {
 
       expect(detector.extractBooks()).toEqual(books);
     });
+
+    it('return books from search result', () => {
+      const html = fs.readFileSync('test/fixtures/booksDetector/libraryWithSearchResult.html').toString();
+      const libraryDOM = new JSDOM(html);
+      const detector = new BooksDetector(libraryDOM.window as unknown as Window);
+      const source = Source.Books;
+      const books: Book[] = [
+        {
+          id: 'E050033363_reflowable_normal',
+          title: '小書痴的下剋上：為了成為圖書管理員不擇手段！第一部 士兵的女兒(I)',
+          coverImageUrl: 'https://s3public-ebook.books.com.tw/cover/49B6B7/7408648/E050033363.jpg',
+          source,
+        },
+      ];
+
+      expect(detector.extractBooks()).toEqual(books);
+    });
   });
 });

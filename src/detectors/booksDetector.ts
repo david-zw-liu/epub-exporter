@@ -3,6 +3,10 @@ import Book, { Source } from '@src/types/book';
 
 const libraryHostname = 'viewer-ebook.books.com.tw';
 
+const randomId = Math.random().toString(36).substring(7);
+
+const emptyNodeList = document.querySelectorAll(`#empty-${randomId} > li`);
+
 export default class BooksDetector implements Detector {
   private window: Window;
 
@@ -19,7 +23,8 @@ export default class BooksDetector implements Detector {
 
   extractBooks(): Book[] {
     const { document } = this.window;
-    const libraryItems = document.querySelectorAll('#list > li');
+    const list = document.querySelector('#list');
+    const libraryItems = list ? list.querySelectorAll('li') : emptyNodeList;
     const books: Book[] = [];
 
     libraryItems.forEach(libraryItem => {
